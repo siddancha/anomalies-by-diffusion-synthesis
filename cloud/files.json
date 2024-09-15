@@ -1,0 +1,15 @@
+{
+ "rugd_full_id_train/model-10.pt": "https://drive.google.com/file/d/1AESshTkt8ezzUwYuOYWObZdGRf4HKNYt/view?usp=sharing",
+ "rugd_full_id_train/sample-10.png": "https://drive.google.com/file/d/1vYPerOXkK4VIEVX8Flc5dnUAdDgkT_f3/view?usp=sharing",
+
+ "uniform_random_dataset/model-10.pt": "https://drive.google.com/file/d/1F7IjsXkTja8PMFWAB2CBYQFQIe6TliIw/view?usp=sharing",
+ "uniform_random_dataset/sample-10.png": "https://drive.google.com/file/d/1VxPZm5zFYBKKbLNuaKaLTfWvty1JyY4E/view?usp=sharing",
+
+ "clevr_ood_color/model-20.pt": "https://drive.google.com/file/d/1NC2ZTdPGCvTn9zMjZo-M4Q_K6dRaotEF/view?usp=sharing",
+ "clevr_ood_color/sample-20.png": "https://drive.google.com/file/d/1B1XRnKjr9kO0uKmwtJJTkpGUeGQUSuhZ/view?usp=sharing",
+
+ "cityscapes_all/model-100.pt": "https://drive.google.com/file/d/1-3KA68Vy9vg0v7d5lLYA3o8jBiUofCxX/view?usp=sharing",
+ "cityscapes_all/sample-100.png": "https://drive.google.com/file/d/1v9IaxJFAmSjDsoHcetCUFaQBGzjrsTvq/view?usp=sharing",
+
+ "sam/vit-h": "https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth"
+}

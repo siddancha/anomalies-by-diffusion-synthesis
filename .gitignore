@@ -1,0 +1,19 @@
+# ignore all files and folders beginning with a period
+.*
+
+# Distribution / packaging
+*.egg-info
+build/
+dist/
+lib/
+
+data
+results/
+cloud/
+
+# Python
+*.pyc
+
+# Compressed files
+*.zip
+*.tar.gz
