@@ -54,7 +54,7 @@ def load_input_img(path: Path,
     return img
 
 def download_from_cloud(cloud_path: str) -> Path:
-    home = Path(__file__).parent.parent / 'cloud'
+    home = Path(__file__).parent / 'cloud'
     with open(home / 'files.json', 'r') as f:
         file_bank = json.load(f)
     
