@@ -1,4 +1,7 @@
-# Diffusion-based uncertainty
+# Anomalies-by-Synthesis: Anomaly Detection using Generative Diffusion Models for Off-Road Navigation
+🌎&thinsp;[Website](https://bit.ly/anomalies-by-synthesis) &nbsp;•&nbsp; 📄&thinsp;[Paper](https://siddancha.github.io/diffunc/paper.pdf) &nbsp;•&nbsp; 🎬&thinsp;[Video (3-min)](https://youtu.be/ZmuKoiwb4Vo) &nbsp;•&nbsp;  <img src="https://siddancha.github.io/diffunc/media/colab.svg" width=25px>&thinsp;[Colab notebook](https://colab.research.google.com/drive/1JGfaqFqt62g82Sgz8nc-wjAMsJY-3Faa)
+
+---
 
 ## Install instructions
 
