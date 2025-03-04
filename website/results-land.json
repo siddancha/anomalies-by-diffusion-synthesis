@@ -1,0 +1,194 @@
+[
+  {
+    "tag":
+      "Person",
+    "input":
+      "media/qualitative-figures-and-videos/images/qualitative results/paper-fig-1/rugd/person/trail-11_00871_l2_p_2e4_ori.png",
+    "edited":
+      "media/qualitative-figures-and-videos/images/qualitative results/paper-fig-1/rugd/person/trail-11_00871_l2_p_3e4_gen.png",
+    "anomaly_mask":
+      "media/qualitative-figures-and-videos/images/qualitative results/paper-fig-1/rugd/person/trail-11_00871_l2_p_3e4_maskclip_unc.png",
+    "caption":
+      "The diffusion model <b>removes the person</b> from the scene! It blends the person's shirt, which is lighter in color, into the sky. The diffusion model also blends the person's trousers, which are darker, into the grass. This allows our analysis pipeline to cleanly detect the person as an anomaly on the right."
+  },
+  {
+    "tag":
+      "Building moss",
+    "input":
+      "media/qualitative-figures-and-videos/images/qualitative results/paper-fig-1/rugd/building-moss/park-2_02586_l2_p_3e4_ori.png",
+    "edited":
+      "media/qualitative-figures-and-videos/images/qualitative results/paper-fig-1/rugd/building-moss/park-2_02586_l2_p_3e4_gen.png",
+    "anomaly_mask":
+      "media/qualitative-figures-and-videos/images/qualitative results/paper-fig-1/rugd/building-moss/park-2_02586_l2_p_3e4_maskclip_unc.png",
+    "caption":
+      "The diffusion model <b>grows moss over the building</b>. This was one of the most interesting ways the diffusion model converted buildings (anomalies) into natural vegetation abundant in the training dataset!"
+  },
+  {
+    "tag":
+      "White building",
+    "input":
+      "media/qualitative-figures-and-videos/images/qualitative results/paper-fig-1/rugd/trail-15-building/trail-15_00096_l2_p_3e4_ori.png",
+    "edited":
+      "media/qualitative-figures-and-videos/images/qualitative results/paper-fig-1/rugd/trail-15-building/trail-15_00096_l2_p_1e4_gen.png",
+    "anomaly_mask":
+      "media/qualitative-figures-and-videos/images/qualitative results/paper-fig-1/rugd/trail-15-building/trail-15_00096_l2_p_1e4_maskclip_unc.png",
+    "caption":
+      "The diffusion model <b>blends the building into the sky</b> in the background, since the building and sky are both white in color. The modified region looks like a clearing in the vegetation, and the door has morphed into a short tree stump. This allows the analysis pipeline to detect the anomaly in yellow."
+  },
+  {
+    "tag":
+      "Fallen tires and trees",
+    "input":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail6-01501/trail-6_01501_ori.png",
+    "edited":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail6-01501/trail-6_01501_l2_p_1e4_gen.png",
+    "anomaly_mask":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail6-01501/trail-6_01501_l2_p_1e4_dinov2_unc.png",
+    "caption":
+      "The scene contains a tire, a thin tree trunk and a thick tree trunk on the ground. These are types of obstacles might be encountered by a robot in a forest. The diffusion model <b>removes the tire</b>, <b>transforms the thinner tree trunk into the ground</b> and <b>blends the thicker trunk into the upright tree</b> behind it!"
+  },
+  {
+    "tag":
+      "Faraway building w/ distractors",
+    "input":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail6_01171/trail-6_01171_ori.png",
+    "edited":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail6_01171/trail-6_01171_l2_p_2e4_gen.png",
+    "anomaly_mask":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail6_01171/trail-6_01171_l2_p_2e4_maskclip_unc.png",
+    "caption":
+      "The scene contains a faraway building with many distracting elements in the foreground, such as fallen leaves and a mound of brown dirt. The diffusion model <b>transforms the building into the sky</b>, while keeping the foreground elements unchanged. This allows the analysis pipeline to isolate the building as an anomaly."
+  },
+  {
+    "tag":
+      "Small cars and buildings #1",
+    "input":
+      "media/qualitative-figures-and-videos/images/qualitative results/paper-fig-1/rugd/multiple-objects/park-1_01911_l2_p_2e4_ori.png",
+    "edited":
+      "media/qualitative-figures-and-videos/images/qualitative results/paper-fig-1/rugd/multiple-objects/park-1_01911_l2_p_2e4_gen.png",
+    "anomaly_mask":
+      "media/qualitative-figures-and-videos/images/qualitative results/paper-fig-1/rugd/multiple-objects/park-1_01911_l2_p_2e4_dinov2_unc.png",
+    "caption":
+      "Our method is <b>able to detect small objects and multiple anomalies</b>. The input image contains multiple small cars and multiple buildings. By transforming these anomalies into vegetation (while keeping the remaining scene unchanged), our pipeline is able to segment them in the rightmost image."
+  },
+  {
+    "tag":
+      "Brown vehicle",
+    "input":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/creek_00166/creek_00166_ori.png",
+    "edited":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/creek_00166/creek_00166_l2_p_1e4_gen.png",
+    "anomaly_mask":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/creek_00166/creek_00166_l2_p_1e4_dinov2_unc.png",
+    "caption":
+      "The diffusion model <b>blends the vehicle into the background</b>, converting it into foliage.<br>This is detected as an anomaly."
+  },
+  {
+    "tag":
+      "Small cars and buildings #2",
+    "input":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/park1_00736/park-1_00736_ori.png",
+    "edited":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/park1_00736/park-1_00736_l2_p_1e4_gen.png",
+    "anomaly_mask":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/park1_00736/park-1_00736_l2_p_1e4_dinov2_unc.png",
+    "caption":
+      "Our method is <b>able to detect small objects and multiple anomalies</b>. The input image contains multiple small cars and multiple buildings. Our method transforms them into vegetation or the sky, while keeping the remaining scene unchanged."
+  },
+  {
+    "tag":
+      "Park bench and car #1",
+    "input":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/park2_01616/park-2_01616_ori.png",
+    "edited":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/park2_01616/park-2_01616_l2_p_1e4_gen.png",
+    "anomaly_mask":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/park2_01616/park-2_01616_l2_p_1e4_dinov2_unc.png",
+    "caption":
+      "The diffusion model <b>detection small cars</b> in the left of the image, and <b>transforms the park bench into vegetation</b>. It is able to <b>detect the white building</b> even if the pixel values are unchanged, because it is <i>semantically different from the sky</i>."
+  },
+  {
+    "tag":
+      "Park bench and car #2",
+    "input":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/park8_01706/park-8_01706_ori.png",
+    "edited":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/park8_01706/park-8_01706_l2_p_1e4_gen.png",
+    "anomaly_mask":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/park8_01706/park-8_01706_l2_p_1e4_dinov2_unc.png",
+    "caption":
+      "The diffusion model <b>removes the small vehicles</b> and the <b>small park bench</b> to the right, while keeping the remaining scene more or less unchanged. The small anomalies are detected by our analysis pipeline."
+  },
+  {
+    "tag":
+      "Thin, tall pole",
+    "input":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail11_01571/trail-11_01571_ori.png",
+    "edited":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail11_01571/trail-11_01571_l2_p_3e4_gen.png",
+    "anomaly_mask":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail11_01571/trail-11_01571_l2_p_3e4_dinov2_unc.png",
+    "caption":
+      "The diffusion model <b>removes the tall, thin pole</b> from the scene. Poles are OOD with respect to the training dataset. Although the poles look similar to trees, the diffusion model is able to remove it, and the pole gets detected as an anomaly."
+  },
+  {
+    "tag":
+      "Small, faraway cars",
+    "input":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail13_00566_3e4/trail-13_00566_ori.png",
+    "edited":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail13_00566_3e4/trail-13_00566_l2_p_3e4_gen.png",
+    "anomaly_mask":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail13_00566_3e4/trail-13_00566_l2_p_3e4_dinov2_unc.png",
+    "caption":
+      "The diffusion model sufficiently and correctly modifies the two small cars far away in the image; they are then detected as anomalies. Other parts of the image are relatively unchanged."
+  },
+  {
+    "tag":
+      "Metallic obstacle",
+    "input":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail14_00611/trail-14_00611_ori.png",
+    "edited":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail14_00611/trail-14_00611_l2_p_1e4_gen.png",
+    "anomaly_mask":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail14_00611/trail-14_00611_l2_p_1e4_maskclip_unc.png",
+    "caption":
+      "The diffusion model <b>transforms a metallic object</b> next to the tree <b>into a part of the tree</b>. The whiteness of the metallic obstacle is interpreted as a chipped part of the tree bark. This is then detected as an anomaly."
+  },
+  {
+    "tag":
+      "Faraway building",
+    "input":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail3_02621/trail-3_02621_ori.png",
+    "edited":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail3_02621/trail-3_02621_l2_p_5e4_gen.png",
+    "anomaly_mask":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail3_02621/trail-3_02621_l2_p_5e4_dinov2_unc.png",
+    "caption":
+      "The diffusion model <b>transforms a faraway building into the sky</b>. The building has a lighter tone because it is being saturated by sunlight, which is interpreted as the sky. Furthermore, <b>straight edges of the building are interpreted as tree branches</b>. These modifications help in detecting the building as an obstacle."
+  },
+  {
+    "tag":
+      "Large and small buildings",
+    "input":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail4_00641/trail-4_00641_ori.png",
+    "edited":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail4_00641/trail-4_00641_l2_p_1e4_gen.png",
+    "anomaly_mask":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail4_00641/trail-4_00641_l2_p_1e4_dinov2_unc.png",
+    "caption":
+      "The scene contains both nearby large buildings and faraway small buildings. The diffusion model <b>transforms the large buildings into the sky and the small buildings into vegetation</b>. This allows the analysis pipeline to detect the buildings as anomalies, although the farther buildings are predicted to be less anomalous."
+  },
+  {
+    "tag":
+      "Building and thin pole",
+    "input":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail7_00996/trail-7_00996_ori.png",
+    "edited":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail7_00996/trail-7_00996_l2_p_1e4_gen.png",
+    "anomaly_mask":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail7_00996/trail-7_00996_l2_p_1e4_dinov2_unc.png",
+    "caption":
+      "The diffusion model <b>transforms the building into vegetation</b>. Furthermore, the diffusion model <b>morphs the thin pole into a tree</b> of the same height, since the shape of poles and trees are similar. Both synthetic transformations are detected as anomalies by our semantic analysis pipeline."
+  }
+]

@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://siddancha.github.io/fonts/fonts.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://siddancha.github.io/projects/template/static/css/project-page.css" type="text/css">
+
+<!-- from Nerfies -->
+<link rel="stylesheet" href="https://siddancha.github.io/projects/template/static/css/bulma.min.css">
+<link rel="stylesheet" href="https://siddancha.github.io/projects/template/static/css/bulma-carousel.min.css">
+<link rel="stylesheet" href="https://siddancha.github.io/projects/template/static/css/bulma-slider.min.css">
+<link rel="stylesheet" href="https://siddancha.github.io/projects/template/static/css/fontawesome.all.min.css">
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<link rel="stylesheet" href="https://siddancha.github.io/projects/template/static/css/index.css">
+<link rel="icon" href="https://siddancha.github.io/projects/template/static/images/favicon.svg">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script defer src="https://siddancha.github.io/projects/template/static/js/fontawesome.all.min.js"></script>
+<script src="https://siddancha.github.io/projects/template/static/js/bulma-carousel.min.js"></script>
+<script src="https://siddancha.github.io/projects/template/static/js/bulma-slider.min.js"></script>
+<script src="https://siddancha.github.io/projects/template/static/js/index.js"></script>
+
+<!-- MathJax for LaTeX -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<style>
+body,td,th {
+    font-family: 'Avenir';
+    font-size: 16px;
+    color: black;
+    overflow-x: hidden;
+}
+
+.canvas {
+    border: 1px solid black;
+}
+
+.tooltip {
+    font-family: 'Avenir';
+    position: absolute;
+    white-space: nowrap;
+    display: block;
+    font-size: small;
+    background: #ffffcc;
+    border: 1px solid black;
+    padding: 3px;
+    z-index: 1000;
+    color: black;
+    visibility: hidden;
+}
+
+.table-like {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: center;
+    color: black
+  }
+
+div.video-caption {
+    display: inline-block;
+    text-align: center;
+    width: 322px;
+    padding: 0px;
+    margin: 0px;
+    color: black
+}
+
+div.author {
+    font-size: 23px;
+    font-weight: 500;
+    justify-content: center;
+    width: 200px;
+    margin-left: 16px;
+    margin-right: 16px;
+    color: #4169E1;
+}
+div.affiliation {
+    margin: 0px;
+    padding: 0px;
+    font-size: 19px;
+    color: black
+}
+
+figcaption.video-caption {
+    width: 975px;
+    display: inline-block;
+    vertical-align: bottom;
+    text-align: center;
+    color: black
+}
+
+video.header-vid {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+}
+
+video {
+    width: 100%;
+    max-width: 975px !important;
+}
+
+span.highlight {
+    color: red;
+    font-weight: bold;
+}
+
+ul, ol {
+    display: table;
+    margin: 0;
+    text-align: center;
+}
+
+li {
+    padding-left: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    font-size: 22;
+}
+
+.instructions {
+    display: inline-block;
+    width: 500px;
+    border: 2px solid black;
+    margin-left: 10px;
+}
+.instructions p {
+    width: 500px;
+    text-align: left;
+    padding-left: 10px;
+    margin: 0px;
+    color: blue;
+    font-size: large;
+}
+
+.cover-spin {
+    position: fixed;
+    width: 100%;
+    left:0; right:0; top:0; bottom:0;
+    background-color: rgba(255,255,255,0.9);
+    z-index: 9999;
+    display: block;
+}
+
+a.foxglove {
+    font-size: 22px;
+    color:#6f3be8;
+    text-decoration: none
+}
+
+a.nav-link {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(215, 215, 215) !important;
+}
+a.nav-link:hover {
+    /* https://xmple.com/color/4369dd/ */
+    color: orange !important;
+}
+a.nav-link.active {
+    color: red !important;
+}
+
+.navbar {
+    min-height: 35px;
+    max-height: 35px;
+    height: 35px;
+    padding-top: 10px !important;
+    padding-bottom: 0 !important;
+}
+
+.container { 
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 975px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+}
+
+section {
+    position: relative;
+    padding-top: 22px;
+    padding-bottom: 30px;
+}
+
+section:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 100%;
+    max-width: 1100px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0)); /* Tapered effect */
+}
+
+section .container {
+    width: 100%;
+    max-width: 975px !important;
+    margin: 0 auto;
+}
+
+section .container.is-max-desktop {
+    max-width: 975px !important;
+    margin: 0 auto;
+}
+
+section.is-light {
+    background-color: rgb(255, 255, 255, 1);
+}
+
+section.is-dark {
+    background-color: rgb(235, 235, 235, 1);
+}
+
+section.is-colorful {
+    background-color: rgb(235, 235, 235, 1);
+    background: linear-gradient(135deg, rgb(255, 0, 0, 0.2), rgb(65, 105, 225, 0.1), rgb(255, 0, 0, 0.05), rgb(65, 105, 225, 0.4));
+}
+
+/* https://stackoverflow.com/a/13555927 */
+.nav-anchor {
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    top: -38px;
+    left: 0;
+    visibility: hidden;
+}
+
+div.bibtex {
+    font-size: 17px;
+    margin-left: 30px;
+}
+
+pre {
+    width: auto;
+    overflow-x: auto;
+    border: solid;
+    border-width: 1px;
+    padding: 5px;
+}
+
+iframe.code-box {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 900px;
+    width: 100%;
+}
+
+/* For gradient in the title */
+.main-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    /* margin-right: 10px; */
+    font-style: italic;
+    background: linear-gradient(45deg, red, #4169E1, #FF4500, #4169E1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300% 300%;
+    animation: gradient-shift 5s ease infinite;
+}
+
+.colorful-text {
+    background: linear-gradient(45deg, red, #4169E1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 5s ease infinite;
+}
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+button.nav-button {
+    border-width: 2px;
+    border-color: black;
+}
+button.nav-button.is-focused {
+    color: black;
+    background-color: #4169e113;
+    border-color: #4169E1;
+    /* background-color: #4169e113; */
+}
+
+.back-to-top-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    /* font-weight: bold; */
+    font-size: 16px;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.back-to-top-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    text-decoration: none;
+}
+
+/* From https://ziyc.github.io/omnire/ */
+.highlighted-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.highlighted-link:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    text-decoration: none;
+}
+.highlighted-link .icon {
+    margin-right: 8px;
+    font-size: 20px;
+}
+.colab-link {
+    background: linear-gradient(45deg, #2196F3, red);
+}
+.arxiv-link {
+    background: linear-gradient(45deg, #FFB74D, #FFA726);
+}
+.pulse {
+    animation: pulse 1.0s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(33, 150, 243, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 12px rgba(33, 150, 243, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(33, 150, 243, 0);
+    }
+}
+
+figcaption.carousel-image-caption {
+    font-size: 19px;
+    margin: 0 auto;
+}
+
+figcaption.carousel-text-caption {
+    display: inline-block;
+    font-size: 18px;
+    color: black;
+    width: 100%;
+    max-width: 900px;
+    height: 78px;
+    align-self: center;
+    align-content: center;
+}
+
+
+/* Custom CSS for Bulma Carousel */
+div.slider-pagination {
+    margin-bottom: 135px;
+}
+div.slider-navigation-next {
+    margin-top: -70px;
+    border: 1px solid gray;
+}
+div.slider-navigation-previous {
+    margin-top: -70px;
+    border: 1px solid gray;
+}
+
+/* Different offsets for land videos */
+div.land-videos-carousel .slider-pagination {
+    margin-bottom: 138px;
+}
+div.land-videos-carousel .slider-navigation-next {
+    margin-top: -70px !important;
+    border: 1px solid gray;
+}
+div.land-videos-carousel .slider-navigation-previous {
+    margin-top: -70px !important;
+    border: 1px solid gray;
+}
+
+/* Different offsets for underwater results */
+div.underwater-results-carousel .slider-pagination {
+    margin-bottom: 152px;
+}
+div.underwater-results-carousel .slider-navigation-next {
+    margin-top: -75px !important;
+    border: 1px solid gray;
+}
+div.underwater-results-carousel .slider-navigation-previous {
+    margin-top: -75px !important;
+    border: 1px solid gray;
+}
+
+
+</style>
+
+
+<!-- HTML -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Anomalies by Synthesis</title>
+</head>
+<body>
+    
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://siddancha.github.io/js/hidebib.js"></script>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar is-fixed-top navbar-expand-lg navbar-dark" style="background-color: black;">        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- <ul class="navbar-nav mr-auto">
+                <li class="nav-item" style="font-size: 15px; color: white; font-style: italic;">
+                    <script>
+                        document.write("This page was last modified on: " + document.lastModified +"");
+                    </script>
+                </li>
+            </ul> -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#talk">Talk</a>
+                </li>
+                <li class="nav-item"></li>
+                    <a class="nav-link" href="#pipeline">Pipeline</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#land-results">Land results</a>
+                </li>
+                <li class="nav-item"></li>
+                    <a class="nav-link" href="#land-videos">Land videos</a>
+                </li>
+                <li class="nav-item"></li>
+                    <a class="nav-link" href="#underwater-results">Underwater results</a>
+                </li>
+                <li class="nav-item"></li>
+                    <a class="nav-link" href="#failure-cases">Failure cases</a>
+                </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#paper">Paper</a>
+            </li> -->
+            </ul>
+        </div>
+    </nav>
+
+    <section class="is-light" style="padding-top: 50px">
+    <div class="columns is-centered">
+    <div class="column has-text-centered">
+            
+    <div class="container" id="title" style="font-size:39px; font-weight:bold;">
+        <p class="main-title"><u>Anomalies by Synthesis</u></p>
+    </div>
+    <div class="container" style="font-size:39px; font-weight:bold;">
+        <p>Anomaly Detection using Generative Diffusion<br>
+        Models for Off-Road Navigation</p>
+    </div>
+    <br>
+
+    <div class="container" style="margin-bottom: 7px">
+        <div class="author">
+            <a href="https://www.linkedin.com/in/sunshine-xinyun-jiang-6449521a4" target="_blank">Sunshine Jiang*</a>
+            <div class="affiliation">MIT CSAIL</div>
+        </div>
+
+        <div class="author">
+            <a href="https://siddancha.github.io/" target="_blank">Siddharth Ancha*</a>
+            <div class="affiliation">MIT CSAIL</div>
+        </div>
+
+        <div class="author">
+            <a href="https://www.cim.mcgill.ca/~travism/" target="_blank">Travis Manderson</a>
+            <div class="affiliation">MIT CSAIL</div>
+        </div>
+
+        <div class="author">
+            <a href="https://lebrandt.github.io/" target="_blank">Laura Brandt</a>
+            <div class="affiliation">MIT CSAIL</div>
+        </div>
+    </div>
+    <div class="container" style="margin-bottom: 7px">
+        <div class="author">
+            <a href="https://yilundu.github.io/" style="margin-bottom: 0px; padding-bottom: 0px;" target="_blank">Yilun Du</a>
+            <div class="affiliation">MIT CSAIL</div>
+        </div>
+
+        <div class="author">
+            <a href="https://scholar.google.com/citations?user=IcbuLWkAAAAJ" target="_blank">Philip R. Osteen</a>
+            <div class="affiliation">US Army Research Lab</div>
+        </div>
+
+        <div class="author">
+            <a href="https://aeroastro.mit.edu/people/nicholas-roy/" target="_blank">Nicholas Roy</a>
+            <div class="affiliation">MIT CSAIL</span></div>
+        </div>
+    </div>
+    <br>
+
+    <div class="container" style="font-size: 29px">
+        <a href="https://2025.ieee-icra.org/">
+            <div style="color: rgb(180, 1, 1); font-weight: bold; font-style: italic;">Submission to ICRA 2025</div>
+        </a>
+    </div>
+
+    <div class="container" style="margin-top: 20px;">
+        <div class="publication-links">
+        <!-- ArXiv Link. -->
+        <!-- <span class="link-block" style="margin-left: 2px; margin-right: 2px">
+            <a href=""
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+                <i class="ai ai-arxiv"></i>
+            </span>
+            <span>ArXiv</span>
+            </a>
+        </span> -->
+        <!-- Paper Link. -->
+        <span class="link-block" style="margin-left: 2px; margin-right: 2px">
+            <a href="./paper.pdf"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Paper</span>
+            </a>
+        </span>
+        <!-- Appendix Link. -->
+        <span class="link-block" style="margin-left: 2px; margin-right: 2px">
+            <a href="./appendix.pdf"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Appendix</span>
+            </a>
+        </span>
+        <!-- Video Link. -->
+        <span class="link-block" style="margin-left: 2px; margin-right: 2px">
+            <a href="https://youtu.be/ZmuKoiwb4Vo"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+                <i class="fab fa-youtube"></i>
+                <!-- <img src="media/youtube.svg"> -->
+            </span>
+            <span>3-min Video</span>
+            </a>
+        </span>
+        <!-- Code Link. -->
+        <span class="link-block" style="margin-left: 2px; margin-right: 2px">
+            <a href="https://github.com/siddancha/anomalies-by-synthesis"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+                <i class="fab fa-github"></i>
+            </span>
+            <span>Code</span>
+            </a>
+        </span>
+        <!-- Colab Link. -->
+        <span class="link-block" style="margin-left: 2px; margin-right: 2px">
+            <a href="https://colab.research.google.com/drive/1JGfaqFqt62g82Sgz8nc-wjAMsJY-3Faa"
+            class="highlighted-link colab-link pulse external-link button is-normal is-rounded">
+            <span class="icon">
+                <!-- <i class="fab fa-google"></i> -->
+                <img src="media/colab.svg">
+            </span>
+            <span>Colab Notebook</span>
+            </a>
+        </span>
+        <!-- Dataset Link. -->
+        <!-- <span class="link-block" style="margin-left: 2px; margin-right: 2px">
+            <a href="https://github.com/google/nerfies/releases/tag/0.1"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+                <i class="far fa-images"></i>
+            </span>
+            <span>Data</span>
+            </a> -->
+        </div>
+    </div>
+    
+    </div>
+    </div>
+    </section>
+
+    <section class="is-dark">
+        <span class="nav-anchor" id="talk"></span> <!-- dummy anchor to adjust for navbar height -->
+    <div class="columns is-centered">
+    <div class="column has-text-centered">
+
+    <div class="container">
+        <div style="font-size: 32px; margin-bottom: 10px;">Video (3 min)</div>
+        <iframe style="width: 100%; max-width: 848px; height: 477px" src="https://www.youtube.com/embed/ZmuKoiwb4Vo?si=Y8PrzmTF5nP9ToYe?rel=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    </div>
+    </div>
+    </section>
+
+    <section class="is-light">
+        <span class="nav-anchor" id="pipeline"></span> <!-- dummy anchor to adjust for navbar height -->    
+    <div class="columns is-centered">
+    <div class="column has-text-centered">
+    <div class="container">
+        <div style="font-size:35px;">Pipeline for anomaly detection using <span class="colorful-text" style="font-style: italic; font-weight: bold;">analysis by synthesis</span></div>
+        <figure>
+            <img src="media/pipeline.png" style="width:100%; max-width: 900px; padding-top: 35px; padding-bottom: 35px;">
+            <br>
+            <figcaption style="font-size: 17px; width:100%; max-width: 900px;">
+                <i><u>Left to right:</u></i> In the synthesis step, a trained diffusion model edits a given input image to remove anomaly segments without modifying other parts of the image.
+                In this case, the model blends the OOD vehicle into dirt in the background.
+                The analysis step extracts anomalies by comparing the pair of images in the CLIP feature space.
+                First, <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Dong_MaskCLIP_Masked_Self-Distillation_Advances_Contrastive_Language-Image_Pretraining_CVPR_2023_paper.pdf">MaskCLIP</a> computes low-resolution <a href="https://proceedings.mlr.press/v139/radford21a.html">CLIP</a> features for each image, which are upsampled using <a href="https://openreview.net/forum?id=GkJiNn2QDF">FeatUp</a>.
+                In this figure, features are visualized via a t-SNE projection to three dimensions.
+                Cosine distances between pixel features in the two images produce a raw anomaly map that highlights anomaly objects.
+                In contrast, comparing the images directly in RGB space (extreme right) is noisy and unable to isolate OOD segments.
+                Finally, <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Kirillov_Segment_Anything_ICCV_2023_paper.pdf">SegmentAnything</a> processes the input image to generate segments; these are used to refine and clean the anomaly map.
+            </figcaption>
+        </figure>
+    </div>
+
+    </div>
+    </div>
+    </section>
+
+    <section class="is-colorful">
+        <span class="nav-anchor" id="land-results"></span>  <!-- dummy anchor to adjust for navbar height -->    
+    <div class="columns is-centered">
+    <div class="column has-text-centered">
+
+    <div class="container">
+        <div style="font-size: 35px">Anomaly detection on land navigation images</div>
+        <div id="results-land-carousel" class="carousel results-carousel" style="width: 100%; max-width: 942px; align-items: center; border: gray 0px solid; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; padding-bottom: 20px; padding-top: 0px">
+        </div>
+        <div style="margin-top: 10px;">
+            <label for="carousel-select" style="font-size: 20px">Show example:</label>
+            <select id="carousel-select"
+                    style="font-size: 18px; font-family: Avenir; font-weight: 500; height: 35px;  border-radius: 10px; background-color: white;">
+                <!-- Options will be dynamically added here -->
+            </select>
+        </div>
+        <script>
+        {
+            const carouselContainer = document.getElementById('results-land-carousel');
+            const selectElement = document.getElementById('carousel-select');
+
+            // Function to fetch data and setup the carousel
+            async function fetchJsonDataAndSetupCarousel() {
+                const response = await fetch('./results-land.json');
+                const data = await response.json();
+
+                let htmlString = '';
+
+                // Clear the carousel container before appending
+                // This is an important step!
+                carouselContainer.innerHTML = '';
+
+                data.forEach((item, index) => {
+                    const pane = document.createElement('div');
+                    const htmlString = `
+                        <div style="display: inline-block;">
+                            <img style="border: 1px solid black; height: 250px;" src="${item.input}">
+                            <figcaption class="carousel-image-caption">Input image</figcaption>
+                        </div>
+                        
+                        <div style="display: inline-block;">
+                            <img style="border: 1px solid black; height: 250px;" src="${item.edited}">
+                            <figcaption class="carousel-image-caption">Synthesized image</figcaption>
+                        </div>
+
+                        <div style="display: inline-block;">
+                            <img style="border: 1px solid black; height: 250px;" src="${item.anomaly_mask}">
+                            <figcaption class="carousel-image-caption">Anomaly scores</figcaption>
+                        </div><br><br>
+
+                        <figcaption class="carousel-text-caption">
+                            ${item.caption}
+                        </figcaption>
+                    `;
+                    pane.innerHTML = htmlString;
+                    carouselContainer.appendChild(pane);
+
+                    // Add options to the select element
+                    const option = document.createElement('option');
+                    option.value = index;
+                    option.textContent = `\xa0${item.tag}\xa0`;
+                    selectElement.appendChild(option);
+                });
+
+
+                // https://bulma-carousel.onrender.com/
+                const carousels = bulmaCarousel.attach('#results-land-carousel', {
+                    slidesToScroll: 1,
+                    slidesToShow: 1,
+                    loop: true,
+                    infinite: true,
+                    pagination: false,
+                    icons: {
+                        'previous': `<svg viewBox="0 0 50 80" xml:space="preserve">
+                        <polyline fill="currentColor" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/>
+                        </svg>`,
+                        'next': `<svg viewBox="0 0 50 80" xml:space="preserve">
+                        <polyline fill="currentColor" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/>
+                        </svg>`
+                    }
+                });
+                const carousel = carousels[0];
+
+                function selectElementCallback (index, updateCarousel) {
+                    selectElement.value = index;
+                    if (updateCarousel) {
+                        carousel.state.next = index;
+                        carousel.show(index);
+                    }
+                }
+
+                // Add event listener to the carousel
+                carousel.on('before:show', (state) => {
+                    const positiveModulus = (a, b) => ((a % b) + b) % b;
+                    const selectedIndex = positiveModulus(state.next, state.length);
+                    selectElementCallback(selectedIndex, updateCarousel=false);
+                });
+
+                // Add event listener to the select element
+                selectElement.addEventListener('change', (event) => {
+                    const selectedIndex = parseInt(event.target.value);
+                    selectElementCallback(selectedIndex, updateCarousel=true);
+                });
+            }
+
+            // Call the function to fetch data and display it
+            fetchJsonDataAndSetupCarousel();
+        }
+        </script>
+    </div>
+
+    </div>
+    </div>
+    </section>
+
+    
+    <section class="is-white">
+        <span class="nav-anchor" id="land-videos"></span>  <!-- dummy anchor to adjust for navbar height -->
+    <div class="columns is-centered">
+    <div class="column has-text-centered">
+
+    <div class="container">
+        <div style="font-size: 35px">Land navigation videos with anomalies removed</div>
+        <div id="videos-land-carousel" class="carousel results-carousel land-videos-carousel" style="width: 100%; max-width: 975px; align-items: center; margin-bottom: 25px;">
+            <div>
+                <div style="display: inline-block;">
+                    <video style="height: 260px;" autoplay muted playsinline autoplay loop controls>
+                        <source src="media/qualitative-figures-and-videos/videos/trail15/trail15-compressed.mp4">
+                    </video>
+                    <figcaption class="carousel-image-caption">
+                        <div style="display: inline-block; width: 32.5%">Input image</div>
+                        <div style="display: inline-block; width: 32.5%">Synthesized image</div>
+                        <div style="display: inline-block; width: 32.5%">Anomaly scores</div>
+                    </figcaption>
+                </div>
+                <figcaption class="carousel-text-caption" style="margin-top: 15px">
+                    The diffusion model <b>blends the building into the sky</b> in the background, since the building and sky happen to be of the same color. The modified region looks like a clearing in the vegetation. Futhermore, the <b>building's door is morphed into a short tree stump!</b> This allows the analysis pipeline to detect the anomalies (right).
+                </figcaption>
+            </div>
+
+            <div>
+                <div style="display: inline-block;">
+                    <video style="height: 260px;" muted playsinline autoplay loop controls>
+                        <source src="media/qualitative-figures-and-videos/videos/trail/trail-compressed.mp4">
+                    </video>
+                    <figcaption class="carousel-image-caption">
+                        <div style="display: inline-block; width: 32.5%">Input image</div>
+                        <div style="display: inline-block; width: 32.5%">Synthesized image</div>
+                        <div style="display: inline-block; width: 32.5%">Anomaly scores</div>
+                    </figcaption>
+                </div>
+                <figcaption class="carousel-text-caption" style="margin-top: 15px">
+                    The diffusion model <b>blends the brown vehicle into mud in the background</b>. However, it does not modify the semantics of other parts of the scene. Later in the video, the diffusion model <b>removes a metal container lying on the ground</b>. Both the brown vehicle and container are detected as anomalies.
+                </figcaption>
+            </div>
+        </div>
+
+        <div style="margin-top: 10px; text-align: center;">
+            <div id="land-videos-buttons" class="buttons is-centered is-medium">
+                <!-- Buttons will be dynamically added here -->
+            </div>
+        </div>
+
+        <script>
+        {
+            // https://bulma-carousel.onrender.com/
+            const carousels = bulmaCarousel.attach('#videos-land-carousel', {
+                slidesToScroll: 1,
+                slidesToShow: 1,
+                loop: true,
+                infinite: true,
+                pagination: true,
+                icons: {
+                    'previous': `<svg viewBox="0 0 50 80" xml:space="preserve">
+                    <polyline fill="currentColor" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/>
+                    </svg>`,
+                    'next': `<svg viewBox="0 0 50 80" xml:space="preserve">
+                    <polyline fill="currentColor" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/>
+                    </svg>`
+                }
+            });
+            const carousel = carousels[0];
+            
+            const buttonsArray = [];
+            function buttonCallback (index, updateCarousel) {
+                // Set the focus of each button
+                buttonsArray.forEach((button, i) => {
+                    if (i === index) {
+                        button.classList.add('is-focused');
+                    } else {
+                        button.classList.remove('is-focused');
+                    }
+                });
+
+                // Update carousel
+                if (updateCarousel) {
+                    carousel.state.next = index;
+                    carousel.show(index);
+                }
+            }
+
+            function MakeAndAddButton (index, text) {
+                const buttonContainer = document.getElementById('land-videos-buttons');
+                const button = document.createElement('button');
+                button.classList.add('button', 'nav-button', 'is-medium', 'is-rounded');
+                if (index === 0) button.classList.add('is-focused');
+                button.onclick = () => buttonCallback(index, updateCarousel=true);
+                button.textContent = text;
+                buttonContainer.appendChild(button);
+                buttonsArray.push(button);
+                return button;
+            }
+
+            MakeAndAddButton(0, 'White building');
+            MakeAndAddButton(1, 'Brown vehicle');
+
+            // Add event listener to the carousel
+            carousel.on('before:show', (state) => {
+                const positiveModulus = (a, b) => ((a % b) + b) % b;
+                const selectedIndex = positiveModulus(state.next, state.length);
+                buttonCallback(selectedIndex, updateCarousel=false);
+            });
+        }
+        </script>
+    </div>
+
+    </div>
+    </div>
+    </section>
+
+    <section class="is-dark">
+        <span class="nav-anchor" id="underwater-results"></span>  <!-- dummy anchor to adjust for navbar height -->   
+    <div class="columns is-centered">
+    <div class="column has-text-centered">
+
+    <div class="container">
+        <div style="font-size: 35px">Anomaly detection on underwater images</div>
+        <div id="results-underwater-carousel" class="carousel results-carousel underwater-results-carousel" style="width: 100%; max-width: 975px; align-items: center; margin-bottom: 25px;">
+            <div>
+                <div style="display: inline-block;">
+                    <img style="border: 1px solid black; height: 250px;" src="media/qualitative-figures-and-videos/images/qualitative results/paper-fig-1/underwater/lionfish/0UAqFzWs-ood.png">
+                    <figcaption class="carousel-image-caption">Input image</figcaption>
+                </div>
+                <div style="display: inline-block;">
+                    <img style="border: 1px solid black; height: 250px;" src="media/qualitative-figures-and-videos/images/qualitative results/paper-fig-1/underwater/lionfish/0UAqFzWs-ind.png">
+                    <figcaption class="carousel-image-caption">Synthesized image</figcaption>
+                </div>
+
+                <div style="display: inline-block;">
+                    <img style="border: 1px solid black; height: 250px;" src="media/qualitative-figures-and-videos/images/qualitative results/paper-fig-1/underwater/lionfish/0UAqFzWs-diff-sam.png">
+                    <figcaption class="carousel-image-caption">Anomaly scores</figcaption>
+                </div><br><br>
+                <figcaption class="carousel-text-caption">
+                    The scene contains a lionfish that camouflages against rocks.
+                    Pertinently, the diffusion model <b>transforms the dark, gray fish into rocks</b> in the background. The diffusion model also <b>grows more rocks to bridge the gap</b> between the fish and the background! This allows our analysis pipeline to cleanly detect the fish as an anomaly.
+                </figcaption>
+            </div>
+            <!-- <div>
+                <div style="display: inline-block;">
+                    <img style="border: 1px solid black; height: 250px;" src="media/qualitative-figures-and-videos/images/qualitative results/paper-fig-1/underwater/diver-fish-robot/35HyRrY0-ood.png">
+                    <figcaption class="carousel-image-caption">Input image</figcaption>
+                </div>
+                <div style="display: inline-block;">
+                    <img style="border: 1px solid black; height: 250px;" src="media/qualitative-figures-and-videos/images/qualitative results/paper-fig-1/underwater/diver-fish-robot/35HyRrY0-ind.png">
+                    <figcaption class="carousel-image-caption">Synthesized image</figcaption>
+                </div>
+
+                <div style="display: inline-block;">
+                    <img style="border: 1px solid black; height: 250px; width: 250px;" src="media/qualitative-figures-and-videos/images/qualitative results/paper-fig-1/underwater/diver-fish-robot/UAqFzWsD-diff-sam.png">
+                    <figcaption class="carousel-image-caption">Anomaly scores</figcaption>
+                </div><br><br>
+                <figcaption class="carousel-text-caption">
+                    The scene contains a diver, a fish, and a robot — all are anomalies in the dataset.
+                    The diffusion model <b>removes the diver fish, and robot</b> from the scene!
+                    It removes the foreground objects but retains the background almost unchanged.
+                    This allows our analysis pipeline to cleanly detect the three anomalies on the right.
+                </figcaption>
+            </div> -->
+
+            <div>
+                <div style="display: inline-block;">
+                    <video style="height: 260px;" autoplay muted playsinline autoplay loop controls>
+                        <source src="media/qualitative-figures-and-videos/videos/diver-fish-robot/diver-fish-robot-compressed.mp4">
+                    </video>
+                    <figcaption class="carousel-image-caption" style="width: 780px;">
+                        <div style="display: inline-block; width: 32.5%">Input image</div>
+                        <div style="display: inline-block; width: 32.5%">Synthesized image</div>
+                        <div style="display: inline-block; width: 32.5%">Anomaly scores</div>
+                    </figcaption>
+                </div><br><br>
+                <figcaption class="carousel-text-caption">
+                    The scene contains a diver, a fish, and a robot — all are anomalies in the dataset.
+                    The diffusion model <b>removes the diver fish, and robot</b> from the scene!
+                    It removes the foreground objects but retains the background almost unchanged.
+                    This allows our analysis pipeline to cleanly detect the three anomalies on the right.
+                </figcaption>
+            </div>
+
+            <div>
+                <div style="display: inline-block;">
+                    <video style="height: 260px;" autoplay muted playsinline autoplay loop controls>
+                        <source src="media/qualitative-figures-and-videos/videos/stingray/stingray-compressed.mp4">
+                    </video>
+                    <figcaption class="carousel-image-caption" style="width: 780px;">
+                        <div style="display: inline-block; width: 32.5%">Input image</div>
+                        <div style="display: inline-block; width: 32.5%">Synthesized image</div>
+                        <div style="display: inline-block; width: 32.5%">Anomaly scores</div>
+                    </figcaption>
+                </div><br><br>
+                <figcaption class="carousel-text-caption">
+                    A stingray appears midway in this video. While the stingray is of similar color to the seabed and camouflages against it, our diffusion model is able to <b>remove the stingray without affecting the rest of the scene</b>. This allows our analysis pipeline to cleanly detect the stingray as an anomaly, only in the frames that it appears in.
+                </figcaption>
+            </div>
+        </div>
+
+        <div style="text-align: center;"></div>
+            <div id="underwater-results-buttons" class="buttons is-centered is-medium">
+                <!-- Buttons will be dynamically added here -->
+            </div>
+        </div>
+
+        <script>
+        {
+            // https://bulma-carousel.onrender.com/
+            const carousels = bulmaCarousel.attach('#results-underwater-carousel', {
+                slidesToScroll: 1,
+                slidesToShow: 1,
+                loop: true,
+                infinite: true,
+                pagination: true,
+                icons: {
+                    'previous': `<svg viewBox="0 0 50 80" xml:space="preserve">
+                    <polyline fill="currentColor" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/>
+                    </svg>`,
+                    'next': `<svg viewBox="0 0 50 80" xml:space="preserve">
+                    <polyline fill="currentColor" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/>
+                    </svg>`
+                }
+            });
+            const carousel = carousels[0];
+            
+            const buttonsArray = [];
+            function buttonCallback (index, updateCarousel) {
+                // Set the focus of each button
+                buttonsArray.forEach((button, i) => {
+                    if (i === index) {
+                        button.classList.add('is-focused');
+                    } else {
+                        button.classList.remove('is-focused');
+                    }
+                });
+
+                // Update carousel
+                if (updateCarousel) {
+                    carousel.state.next = index;
+                    carousel.show(index);
+                }
+            }
+
+            function MakeAndAddButton (index, text) {
+                const buttonContainer = document.getElementById('underwater-results-buttons');
+                const button = document.createElement('button');
+                button.classList.add('button', 'nav-button', 'is-medium', 'is-rounded');
+                if (index === 0) button.classList.add('is-focused');
+                button.onclick = () => buttonCallback(index, updateCarousel=true);
+                button.textContent = text;
+                buttonContainer.appendChild(button);
+                buttonsArray.push(button);
+                return button;
+            }
+
+            MakeAndAddButton(0, 'Camouflaged fish');
+            MakeAndAddButton(1, 'Diver + robot + fish');
+            MakeAndAddButton(2, 'Stingray');
+
+            // Add event listener to the carousel
+            carousel.on('before:show', (state) => {
+                const positiveModulus = (a, b) => ((a % b) + b) % b;
+                const selectedIndex = positiveModulus(state.next, state.length);
+                buttonCallback(selectedIndex, updateCarousel=false);
+            });
+        }
+        </script>
+    </div>
+
+    </div>
+    </div>
+    </section>
+
+    <section class="is-colorful">
+        <span class="nav-anchor" id="failure-cases"></span>  <!-- dummy anchor to adjust for navbar height -->        
+    <div class="columns is-centered">
+    <div class="column has-text-centered">
+
+    <div class="container">
+        <div style="font-size: 35px">Failure cases</div>
+        <div id="failure-cases-carousel" class="carousel results-carousel" style="width: 100%; max-width: 942px; align-items: center; border: gray 0px solid; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; padding-bottom: 20px; padding-top: 0px">
+        </div>
+
+        <div style="margin-top: 10px;">
+            <label for="failure-cases-carousel-select" style="font-size: 20px">Show failure case:</label>
+            <select id="failure-cases-carousel-select"
+                    style="font-size: 18px; font-family: Avenir; font-weight: 500; height: 35px;  border-radius: 10px; background-color: white;">
+                <!-- Options will be dynamically added here -->
+            </select>
+        </div>
+
+        <script>
+        {
+            const carouselContainer = document.getElementById('failure-cases-carousel');
+            const selectElement = document.getElementById('failure-cases-carousel-select');
+
+            // Function to fetch and display data
+            async function fetchJsonDataAndSetupCarousel() {
+                const response = await fetch('./failure-cases.json');
+                const data = await response.json();
+
+                let htmlString = '';
+
+                // Clear the carousel container before appending
+                // This is an important step!
+                carouselContainer.innerHTML = '';
+
+                data.forEach((item, index) => {
+                    const pane = document.createElement('div');
+                    const htmlString = `
+                        <div style="display: inline-block;">
+                            <img style="border: 1px solid black; height: 250px;" src="${item.input}">
+                            <figcaption class="carousel-image-caption">Input image</figcaption>
+                        </div>
+                        
+                        <div style="display: inline-block;">
+                            <img style="border: 1px solid black; height: 250px;" src="${item.edited}">
+                            <figcaption class="carousel-image-caption">Synthesized image</figcaption>
+                        </div>
+
+                        <div style="display: inline-block;">
+                            <img style="border: 1px solid black; height: 250px;" src="${item.anomaly_mask}">
+                            <figcaption class="carousel-image-caption">Anomaly scores</figcaption>
+                        </div><br><br>
+
+                        <figcaption class="carousel-text-caption">
+                            ${item.caption}
+                        </figcaption>
+                    `;
+                    pane.innerHTML = htmlString;
+                    carouselContainer.appendChild(pane);
+
+                    // Add options to the select element
+                    const option = document.createElement('option');
+                    option.value = index;
+                    option.textContent = `\xa0${item.tag}\xa0`;
+                    selectElement.appendChild(option);
+                });
+
+
+                // https://bulma-carousel.onrender.com/
+                const carousels = bulmaCarousel.attach('#failure-cases-carousel', {
+                    slidesToScroll: 1,
+                    slidesToShow: 1,
+                    loop: true,
+                    infinite: true,
+                    pagination: true,
+                    icons: {
+                        'previous': `<svg viewBox="0 0 50 80" xml:space="preserve">
+                        <polyline fill="currentColor" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/>
+                        </svg>`,
+                        'next': `<svg viewBox="0 0 50 80" xml:space="preserve">
+                        <polyline fill="currentColor" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/>
+                        </svg>`
+                    }
+                });
+                const carousel = carousels[0];
+
+                function selectElementCallback (index, updateCarousel) {
+                    selectElement.value = index;
+                    if (updateCarousel) {
+                        carousel.state.next = index;
+                        carousel.show(index);
+                    }
+                }
+
+                // Add event listener to the carousel
+                carousel.on('before:show', (state) => {
+                    const positiveModulus = (a, b) => ((a % b) + b) % b;
+                    const selectedIndex = positiveModulus(state.next, state.length);
+                    selectElementCallback(selectedIndex, updateCarousel=false);
+                });
+
+                // Add event listener to the select element
+                selectElement.addEventListener('change', (event) => {
+                    const selectedIndex = parseInt(event.target.value);
+                    selectElementCallback(selectedIndex, updateCarousel=true);
+                });
+            }
+
+            // Call the function to fetch data and display it
+            fetchJsonDataAndSetupCarousel();
+        }
+        </script>
+    </div>
+
+    </div>
+    </div>
+    </section>
+
+    <section class="is-dark">
+    <div class="columns is-centered">
+    <div class="column has-text-centered">
+
+    <div class="container is-max-desktop">
+        <!-- <hr class="container"> -->
+        <div style="font-size: 32px">Acknowledgements</div>
+        <p style="font-size: 16px; text-align: left; width: 95%; margin-top: 15px;">
+            This material is based upon work supported by the Army Research Office under Cooperative Agreement No. W911NF-21-2-0150. The views and conclusions contained in this document are those of the authors and should not be interpreted as representing the official policies, either expressed or implied, of the Army Research Office or the U.S. Government. The U.S. Government is authorized to reproduce and distribute reprints for Government purposes notwithstanding any copyright notation herein.
+        </p>
+    <br>
+    <span class="link-block" style="margin-left: 2px; margin-right: 2px; margin-top: 20px">
+        <a href="#top" class="back-to-top-button external-link button is-normal is-rounded is-dark">
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path d="M12 2L4 10h5v8h6v-8h5L12 2z" fill="currentColor"/>
+              </svg>
+          </span>
+          <span style="font-size: 18px;">Back to top</span>
+          </a>
+      </span>
+    </div>
+
+    </div>
+    </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navAnchors = document.querySelectorAll('.nav-anchor');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            function activateNavLink() {
+                // Remove 'active' class from all nav links
+                navLinks.forEach((link) => link.classList.remove('active'));
+
+                let index = navAnchors.length;
+
+                navAnchors.forEach((navAnchor, index) => {
+
+                    const eyeLineOffset = 100;
+
+                    // 38px is the height of the fixed navbar
+                    // eyeLineOffset is the offset from the top of the section to the eye line
+                    const scrollY = window.scrollY + 38 + eyeLineOffset;
+
+                    const section = navAnchor.parentNode;
+                    if (
+                        (scrollY >= section.offsetTop) &&
+                        (scrollY < section.offsetTop + section.offsetHeight)
+                    ) {
+                        // Add 'active' class to the current section's nav link
+                        navLinks[index].classList.add('active');
+                        return;
+                    }
+                });
+            }
+
+            activateNavLink(); // Call once on initial load
+            window.addEventListener('scroll', activateNavLink); // Update on scroll
+    });
+    </script>
+</body>
