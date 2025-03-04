@@ -1,0 +1,62 @@
+[
+  {
+    "tag":
+      "Unsegmented person",
+    "input":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail11_01571/trail-11_01571_ori.png",
+    "edited":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail11_01571/trail-11_01571_l2_p_3e4_gen.png",
+    "anomaly_mask":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail11_01571/trail-11_01571_l2_p_3e4_dinov2_unc.png",
+    "caption":
+      "<span style='color:red; font-weight: bold'>Failure: SegmentAnything (SAM)</span><br>Even though the diffusion model correctly removes the person (anomaly) in the middle figure, SAM does not segment the small person. The under-segmentation propagates to a low anomaly score."
+  },
+  {
+    "tag":
+      "Edited vegetation",
+    "input":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/creek_00001/creek_00001_ori.png",
+    "edited":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/creek_00001/creek_00001_l2_p_2e4_gen.png",
+    "anomaly_mask":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/creek_00001/creek_00001_l2_p_2e4_dinov2_unc.png",
+    "caption":
+      "<span style='color:red; font-weight: bold'>Failure: Diffusion (synthesis) model</span><br>The diffusion model correctly blends the vehicle into foliage, which is detected as an anomaly. However, it incorrectly modifies the plants below the vehicle, incorrectly detecting it as an anomaly, albeit with a <u>low score</u>."
+  },
+  {
+    "tag":
+      "Edited road",
+    "input":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail13_00566_1e4/trail-13_00566_ori.png",
+    "edited":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail13_00566_1e4/trail-13_00566_l2_p_1e4_gen.png",
+    "anomaly_mask":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail13_00566_1e4/trail-13_00566_l2_p_1e4_dinov2_unc.png",
+    "caption":
+      "<span style='color:red; font-weight: bold'>Failure: Diffusion (synthesis) model</span><br>The diffusion model incorrectly modifies the gravel road (in-distribution) into grass, which gets detected as an anomaly. The diffusion model can sometimes struggle with small segments that are far away in the image."
+  },
+  {
+    "tag":
+      "Unedited + unsegmented fallen branch",
+    "input":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail7_00251/trail-7_00251_ori.png",
+    "edited":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail7_00251/trail-7_00251_l2_p_5e4_gen.png",
+    "anomaly_mask":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail7_00251/trail-7_00251_l2_p_5e4_maskclip_unc.png",
+    "caption":
+      "<span style='color:red; font-weight: bold'>Failure: Diffusion (synthesis) model and Segment Anything (SAM)</span><br>The diffusion model fails to modify the fallen tree trunk in the foreground. However, SAM also fails to segment the trunk, which luckily leads to a low anomaly score. The pipeline <b>does however detect faraway buildings</b>."
+  },
+  {
+    "tag":
+      "Unedited fallen branch",
+    "input":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail7_00531/trail-7_00531_ori.png",
+    "edited":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail7_00531/trail-7_00531_l2_p_1e4_gen.png",
+    "anomaly_mask":
+      "media/qualitative-figures-and-videos/images/qualitative results/website_fig_rugd/trail7_00531/trail-7_00531_l2_p_1e4_dinov2_unc.png",
+    "caption":
+      "<span style='color:red; font-weight: bold'>Failure: Diffusion (synthesis) model</span><br>The scene contains multiple fallen branches, which are anomalies. The diffusion model <b>removes the largest branch and transforms it into the ground</b>. While it does so for other branches, it is not as pronounced."
+  }
+]
